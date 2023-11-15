@@ -1,0 +1,40 @@
+.body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.container {
+    margin-top: 5%;
+    content: center;
+    text-align: center;
+    margin-left: auto;
+}
+
+.container2 {
+    width: 1080px;
+    margin: auto;
+}
+
+.title {
+    font-size: 35px;
+}
+
+.h2 {
+    font-size: 20px;
+}
+
+.t2 {
+    /* width: 100%; */
+    margin-top: 3%;
+    text-align: left;
+}
+
+.li {
+    margin-left: 5%;
+    padding-bottom: 0.2%;
+    list-style: circle;
+    font-size: 15px;
+}
+.ths {
+    text-align: center;
+}
