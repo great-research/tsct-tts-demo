@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tstc-tts-demo</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body class="body">
+    <div class="container">
+        <div class="container">
+            <h1 class="title">Efficient Feature Fusion for Few-Shot Speaker-Adaptive Text-to-Speech</h1>
+        </div>
+        <div class="container2">
+            <div class="t2">
+                <h2 class="h2">TSTC</h2>
+                <img src="statics/overview.jpg", alt="overview" width="80%"/>
+                <p>
+                    <strong>Figure1:</strong> Description of our proposed system. As
+                    shown in sub-figure(a), our proposed TSCT-TTS uses a mel-style
+                    encoder to get the latent speaker vector 𝜔 for the reference mel
+                    spectrogram of a target speaker. The details of the TSCT block are
+                    shown in sub-figure(b), where the 𝜔 is used for constraining the
+                    hidden-state by introducing both the recurrent and a convolution
+                    branch. The addition and multiplication operations are represented
+                    by ⨁ and ⨂ respectively.
+                </p>
+            </div>
+            <div class="t2">
+                <h2 class="h2">Authors</h2>
+                <li class="li">
+                    Zhiyong Chen* <a href="@shu.edu.cn">@shu.edu.cn</a>
+                </li>
+                <li class="li">
+                    Zhiqi Ai* <a href="@shu.edu.cn">@shu.edu.cn</a>
+                </li>
+                <li class="li">
+                    Youxuan Ma <a href="@shu.edu.cn">@shu.edu.cn</a>
+                </li>
+                <li class="li">
+                    Xinnuo Li <a href="@shu.edu.cn">@shu.edu.cn</a>
+                </li>
+                <li class="li">
+                    Shugong Xu^ <a href="@shu.edu.cn">@shu.edu.cn</a>
+                </li>
+                <p>* Equal contribution. ^ Corresponding author.</p>
+            </div>
+            <div class="t2">
+                <h2 class="h2">Abstract</h2>
+                <p>
+                    Nowadays, text to speech (TTS) system has been able to generate
+                    high-fidelity human-like speech. However, it is difficult for the
+                    TTS system to maintain the quality of generated speech when there is
+                    little training data available for a specific speaker. Therefore, we
+                    propose the voice cloning system TSCT-TTS, aiming to clone the
+                    speaker identity of a target speaker using only a few utterances.
+                    Based on the advanced FastSpeech 2 TTS system, we modified its
+                    feed-forward Transformer block and used the latent speaker vector to
+                    explicitly control its hidden state. To achieve this, we fusion the
+                    local level feature coded by the Gated Convolutional Network (GCN)
+                    based module and the utterance level feature coded by the Gated
+                    Recurrent Unit (GRU) based module. Experiment shows that our
+                    approach can custom the voice for a target speaker with 15
+                    sentences. Besides, our proposed TSCT-TTS needs little computation
+                    resources by fine-tuning 5k steps on the pretrained multi-speaker
+                    based FastSpeech 2 model. Compared with baseline systems, our system
+                    demonstrates better all-around performance in the subjective and
+                    objective evaluation metrics.
+                </p>
+            </div>
+            <div class="t2">
+                <h2 class="h2">
+                    Comparative Metrics of FastSpeech-Based Models on LibriTTS
+                </h2>
+                <div>
+                    <table class="tab">
+                        <thead>
+                            <tr>
+                                <th class="ths">GT</th>
+                                <th class="ths">GT mel + HiFiGAN</th>
+                                <th class="ths">FastSpeech 2 (ecapa)</th>
+                                <th class="ths">FastSpeech + TSTC (Ours)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p></p>
+            </div>
+            <div class="t2">
+                <h2 class="h2">
+                    Comparative Metrics of VITS-Based Models on LibriTTS
+                </h2>
+                <div>
+                    <table class="tab">
+                        <thead>
+                            <tr>
+                                <th class="ths">GT</th>
+                                <th class="ths">GT mel + HiFiGAN</th>
+                                <th class="ths">FastSpeech 2 (ecapa)</th>
+                                <th class="ths">FastSpeech + TSTC (Ours)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p></p>
+            </div>
+            <div class="t2">
+                <h2 class="h2">
+                    Ablation Study on the impact of using the CNN or RNN branch within
+                    the TSCT
+                </h2>
+                <div>
+                    <table class="tab">
+                        <thead>
+                            <tr>
+                                <th class="ths">GT</th>
+                                <th class="ths">GT mel + HiFiGAN</th>
+                                <th class="ths">FastSpeech 2 (ecapa)</th>
+                                <th class="ths">FastSpeech + TSTC (Ours)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                                <td>
+                                    <audio controls>
+                                        <source src="2_audio.wav" type="audio/mpeg" />
+                                    </audio>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
