@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>TSTC-TTS-Demo</title>
+  <title>TSCT-TTS-Demo</title>
   <link type="text/css" rel="stylesheet" href="css/style.css" />
   <script type="text/javascript" src="js/script.js"></script>
 </head>
@@ -15,8 +15,7 @@
         <div class="htmlpage-cell" id="iez6">
         </div>
         <div id="iml7" class="htmlpage-cell c1169">
-          <div id="idac" class="c2066">Optimizing Feature Fusion for Improved Few-Shot Speaker Adaptation in
-            Text-to-Speech Synthesis
+          <div id="idac" class="c2066">Optimizing Feature Fusion for Improved Zero-shot Adaptation in Text-to-Speech Synthesis
           </div>
           <div id="ik4q9" class="c4939">Zhiyong Chen*, Zhiqi Ai*, Youxuan Ma, Xinnuo Li, Shugong Xu**
           </div>
@@ -34,7 +33,7 @@
                 </h2>
               </div>
               <div id="itz2q" class="c10696">
-                <span id="iyb5g" class="c10783">In the era of advanced Text-to-Speech (TTS) systems capable of generating high-fidelity, human-like speech, voice cloning (VC) stands out as an important subtask. A primary challenge in VC is maintaining speech quality and speaker similarity with limited training data for a specific speaker. Existing VC systems often rely on basic combinations of embedded speaker vectors, leading to suboptimal performance. To overcome this, we introduce the Two-branch Speaker Control Module (TSCM), an innovative voice cloning module engineered to precisely capture the speaker identity of a target speaker. Our method uses an advanced fusion of local-level features from a Gated Convolutional Network (GCN) and utterance-level features from a Gated Recurrent Unit (GRU) to enhance speaker control. We demonstrate the effectiveness of TSCM by integrating it into state-of-the-art TTS systems like FastSpeech 2 and VITS, significantly optimizing their performance. Experimental results show that TSCM based TTS (TSCM-TTS) facilitates accurate voice customization for a target speaker with minimal data and minimizes computational resources through few-shot fine-tuning of pre-trained multi-speaker models. Furthermore, TSCM-TTS demonstrates superior performance in zero-shot scenarios compared to baseline and state-of-the-art systems. Both subjective and objective evaluations confirm the superiority of our system over existing methodologies.</span>
+                <span id="iyb5g" class="c10783">In the era of advanced Text-to-Speech (TTS) systems capable of generating high-fidelity, human-like speech by refering a reference speech, voice cloning (VC) or zero-shot TTS (ZS-TTS) stands out as an important subtask. A primary challenge in VC is maintaining speech quality and speaker similarity with limited reference data for a specific speaker. However, existing VC systems often rely on naive combinations of embedded speaker vectors for speaker control, which compromises the capture of speaking style, voice print, and semantic accuracy. To overcome this, we introduce the Two-branch Speaker Control Module (TSCM), an novel and highly adaptable voice cloning module designed to precisely processing speaker or style control for a target speaker. Our method uses an advanced fusion of local-level features from a Gated Convolutional Network (GCN) and utterance-level features from a Gated Recurrent Unit (GRU) to enhance speaker control. We demonstrate the effectiveness of TSCM by integrating it into advanced TTS systems like FastSpeech 2 and VITS architectures, significantly optimizing their performance. Experimental results show that TSCM enables accurate voice cloning for a target speaker with minimal data through both zero-shot or few-shot fine-tuning of pre-trained TTS models. Furthermore, our TSCM based VITS (TSCM-VITS) showcases superior performance in zero-shot scenarios compared to existing state-of-the-art VC systems, even with basic dataset configurations. Our method's superiority is validated through comprehensive subjective and objective evaluations.</span>
                 <br/>
               </div>
               <div id="i7oh2" class="c1693">
@@ -76,7 +75,7 @@
                 <h2 class="c1770">Demo
                 </h2>
               </div>
-              <div id="i1swk" class="c7856">1. Voice Cloning
+              <div id="i1swk" class="c7856">1. Zero-shot Text-to-Speech (Voice Cloning)
               </div>
               <div>
                 <table class="htmlpage-row">
@@ -120,7 +119,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="htmlpage-ceil c13722">GT(Read by real speaker)</th>
+                      <td class="htmlpage-ceil c13722">GT (Read by real speaker)</th>
                       <td><audio controls>
                           <source src="audios/GT_A1.wav" type="audio/mpeg" />
                         </audio></td>
@@ -134,7 +133,7 @@
                   </tbody>
                   <tbody>
                     <tr>
-                      <td class="htmlpage-ceil c13722">YourTTS_Control-ZS(baseline)</th>
+                      <td class="htmlpage-ceil c13722">YourTTS_Control-ZS (baseline)</th>
                       <td><audio controls>
                           <source src="audios/YourTTS_Control_ZS_A1.wav" type="audio/mpeg" />
                         </audio></td>
@@ -148,7 +147,7 @@
                   </tbody>
                   <tbody>
                     <tr>
-                      <td class="htmlpage-ceil c13722">YourTTS_Control-FS(baseline)</th>
+                      <td class="htmlpage-ceil c13722">YourTTS_Control-FS (baseline)</th>
                       <td><audio controls>
                           <source src="audios/YourTTS_Control_FS_A1.wav" type="audio/mpeg" />
                         </audio></td>
@@ -162,7 +161,7 @@
                   </tbody>
                   <tbody>
                     <tr>
-                      <td class="htmlpage-ceil c13722">TSCM-VITS-ZS(ours)</th>
+                      <td class="htmlpage-ceil c13722">TSCM-VITS-ZS (ours)</th>
                       <td><audio controls>
                           <source src="audios/TSCM_VITS_ZS_A1.wav" type="audio/mpeg" />
                         </audio></td>
@@ -176,7 +175,7 @@
                   </tbody>
                   <tbody>
                     <tr>
-                      <td class="htmlpage-ceil c13722">TSCM-VITS-FS(ours)</th>
+                      <td class="htmlpage-ceil c13722">TSCM-VITS-FS (ours)</th>
                       <td><audio controls>
                           <source src="audios/TSCM_VITS_FS_A1.wav" type="audio/mpeg" />
                         </audio></td>
@@ -191,8 +190,7 @@
                 </table>
               </div>
               <div class="c7856"></div>
-              <div class="c7856">2. Performance Comparative Metrics of Our Proposed Method with SOTA VC Models
-                (Zero-shot)
+              <div class="c7856">2. Performance comparison of our TSCM-TTS with other advanced zero-shot TTS systems on English speech synthesis.
               </div>
               <div>
                 <table class="htmlpage-row">
@@ -236,7 +234,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="htmlpage-ceil c13722">VALLEX</th>
+                      <td class="htmlpage-ceil c13722">VALLEX (2023 Demo)</th>
                       <td><audio controls>
                           <source src="audios/VALLEX_ZS_A1.wav" type="audio/mpeg" />
                         </audio></td>
@@ -250,7 +248,7 @@
                   </tbody>
                   <tbody>
                     <tr>
-                      <td class="htmlpage-ceil c13722">XTTS</th>
+                      <td class="htmlpage-ceil c13722">XTTS (2023 Demo)</th>
                       <td><audio controls>
                           <source src="audios/XTTS_ZS_A1.wav" type="audio/mpeg" />
                         </audio></td>
@@ -264,7 +262,35 @@
                   </tbody>
                   <tbody>
                     <tr>
-                      <td class="htmlpage-ceil c13722">TSCM-VITS(ours)</th>
+                      <td class="htmlpage-ceil c13722">LAURA (2024 Demo)</th>
+                      <td><audio controls>
+                          <source src="audios/LAURA_ZS_A1.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/LAURA_ZS_A2.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/LAURA_ZS_A3.wav" type="audio/mpeg" />
+                        </audio></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="htmlpage-ceil c13722">OpenVoice (2024 Demo)</th>
+                      <td><audio controls>
+                          <source src="audios/OpenVoice_ZS_A1.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/OpenVoice_ZS_A2.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/XTTS_ZS_A3.wav" type="audio/mpeg" />
+                        </audio></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="htmlpage-ceil c13722">TSCM-VITS (ours)</th>
                       <td><audio controls>
                           <source src="audios/TSCM_VITS_ZS_A1.wav" type="audio/mpeg" />
                         </audio></td>
@@ -277,6 +303,112 @@
                     </tr>
                   </tbody>
                 </table>
+              </div>
+              <div class="c7856"></div>
+              <div class="c7856">3. Performance comparison of our TSCM-TTS with other advanced zero-shot TTS systems on Chinese speech synthesis.
+              </div>
+              <div>
+                <table class="htmlpage-row">
+                  <thead>
+                    <tr>
+                      <td class="htmlpage-ceil c13722">
+                        </th>
+                      <td class="htmlpage-ceil c13722">Sample A</th>
+                      <td class="htmlpage-ceil c13722">Sample B</th>
+                      <td class="htmlpage-ceil c13722">Sample C</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="htmlpage-ceil c13722">Utterance for enroll</th>
+                      <td><audio controls>
+                          <source src="audios/1_Ref.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/2_Ref.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/3_Ref.wav" type="audio/mpeg" />
+                        </audio></td>
+                    </tr>
+                  </tbody>
+                  <thead>
+                    <tr>
+                      <td class="htmlpage-ceil c13722">Target Text</td>
+                      <td class="htmlpage-ceil c13722">一三六五七七五八六三三.</td>
+                      <td class="htmlpage-ceil c13722">天丰节能申请材料显示.</td>
+                      <td class="htmlpage-ceil c13722">以保护保险消费者合法权益为目标.</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="htmlpage-ceil c13722">GT</th>
+                      <td><audio controls>
+                          <source src="audios/1_GT.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/2_GT.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/3_GT.wav" type="audio/mpeg" />
+                        </audio></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="htmlpage-ceil c13722">VALLEX (2023 Demo)</th>
+                      <td><audio controls>
+                          <source src="audios/1_VALLE.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/2_VALLE.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/3_VALLE.wav" type="audio/mpeg" />
+                        </audio></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="htmlpage-ceil c13722">XTTS (2023 Demo)</th>
+                      <td><audio controls>
+                          <source src="audios/1_XTTS.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/2_XTTS.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/3_XTTS.wav" type="audio/mpeg" />
+                        </audio></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="htmlpage-ceil c13722">TSCM-VITS (ours)</th>
+                      <td><audio controls>
+                          <source src="audios/1_TSCM.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/2_TSCM.wav" type="audio/mpeg" />
+                        </audio></td>
+                      <td><audio controls>
+                          <source src="audios/3_TSCM.wav" type="audio/mpeg" />
+                        </audio></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="c7856">Cite:
+              </div>
+              <div id="itz2q" class="c10696">
+                <span id="iyb5g" class="c10783">Microsoft: VALLE-X Online DEMO (2023). https://huggingface.co/spaces/Plachta/VALL-E-X </span>
+                <br/>
+                <span id="iyb5g" class="c10783">CoquiTTS: Coqui TTS Online DEMO (2023). https://github.com/coqui-ai/TTS </span>
+                <br/>
+                <span id="iyb5g" class="c10783">OpenVoice: OpenVoice Online DEMO (2024). https://huggingface.co/spaces/myshell-ai/OpenVoice </span>
+                <br/>
+                <span id="iyb5g" class="c10783">LauraTTS: LauraTTS Online DEMO (2024). https://modelscope.cn/models/iic/speech_synthesizer-laura-en-libritts-16k-codec_nq2-pytorch/summary </span>
+                <br/>
               </div>
             </div>
             <div class="htmlpage-cell">
